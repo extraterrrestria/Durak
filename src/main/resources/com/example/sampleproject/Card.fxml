@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="134.0" prefWidth="107.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sampleproject.CardController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="134.0" prefWidth="107.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sampleproject.CardController">
    <children>
       <GridPane layoutX="-46.0" layoutY="30.0" prefHeight="134.0" prefWidth="107.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <columnConstraints>
@@ -29,7 +31,7 @@
                <children>
                   <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <children>
-                        <Text fx:id="nominal" layoutX="13.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="    " wrappingWidth="27.1484375" />
+                        <Text fx:id="nominal" layoutX="13.0" layoutY="27.0" onMouseClicked="#replaceCardToTable" strokeType="OUTSIDE" strokeWidth="0.0" text="    " wrappingWidth="27.1484375" />
                      </children>
                   </Pane>
                </children>
@@ -41,7 +43,7 @@
             </Pane>
             <Pane fx:id="imgPane" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                <children>
-                  <ImageView fx:id="imgBuffer" fitHeight="25.0" fitWidth="66.0" layoutX="21.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imgBuffer" fitHeight="25.0" fitWidth="66.0" layoutX="21.0" layoutY="2.0" onMouseClicked="#replaceCardToTable" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
          </children>

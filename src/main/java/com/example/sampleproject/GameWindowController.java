@@ -57,8 +57,6 @@ public class GameWindowController {
 
             playerPanel.getChildren().add(newPane);
 
-            //scrollPane = new ScrollPane();
-            //scrollPane.setContent(playerPanel);
         }
     }
 

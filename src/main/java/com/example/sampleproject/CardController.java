@@ -60,11 +60,6 @@ public class CardController {
     	imgBuffer = new ImageView(new Image(isImage));
     	imgBuffer.setFitWidth(100);
     	imgBuffer.setPreserveRatio(true);
-    	//imgBuffer.setSmooth(true);
-    	
-    	//cardPane.getChildren().add(imgBuffer);
-    	
-    	//imgPane = new Pane();
     	imgPane.getChildren().setAll(imgBuffer);
     	
     }
@@ -81,7 +76,5 @@ public class CardController {
     void replaceCardToTable(MouseEvent event) throws IOException {
     	gameWindow.addCardOnTable(this);
     	cardPane.setVisible(false);
-    	//FlowPane firstPlayerPane = (FlowPane) cardPane.getParent();
-    	//firstPlayerPane.getChildren().remove(cardPane);
     }
 }
