@@ -49,19 +49,24 @@ public class CardController {
     	this.cardPane = cardPane;
         this.card = card;
 
-        URL url = HelloApplication.class.getResource("EntrancePicture.jpg");
-        File img = null; // ("C:\\Users\\Boris\\eclipse-workspace\\Durak_0.1\\img\\EntrancePicture.jpg");
+        // Формируем путь к файлу фотографии карты
+        String fileName = card.getSuit().name().toLowerCase() + "_" + card.getRank().name().toLowerCase() + ".png";
+        String filePath = "/com/example/sampleproject/" + fileName;
+
+        // Загружаем фотографию карты
         try {
-            img = new File(url.toURI());
-        } catch (URISyntaxException e) {
-            throw new RuntimeException(e);
+            InputStream isImage = getClass().getResourceAsStream(filePath);
+            if (isImage != null) {
+                imgBuffer = new ImageView(new Image(isImage));
+                imgBuffer.setFitWidth(100);
+                imgBuffer.setPreserveRatio(true);
+                imgPane.getChildren().setAll(imgBuffer);
+            } else {
+                throw new FileNotFoundException("Фотография карты не найдена: " + filePath);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        InputStream isImage = (InputStream) new FileInputStream(img);
-    	imgBuffer = new ImageView(new Image(isImage));
-    	imgBuffer.setFitWidth(100);
-    	imgBuffer.setPreserveRatio(true);
-    	imgPane.getChildren().setAll(imgBuffer);
-    	
     }
     
     public String getNominal() {
